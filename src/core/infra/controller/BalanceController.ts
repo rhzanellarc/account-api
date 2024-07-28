@@ -21,7 +21,7 @@ export class BalanceController {
       return res.status(200).json(balance);
     } catch (error) {
       if (error instanceof AccountNotFoundError) {
-        return res.status(404).send();
+        return res.status(404).json(0);
       } else if (error instanceof InvalidParametersError) {
         return res.status(400).send(error.message);
       } 

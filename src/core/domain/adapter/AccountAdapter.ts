@@ -6,11 +6,11 @@ export default class AccountAdapter implements Adapter<Account, AccountDto> {
     domainToDto(account: Account): AccountDto {
         const dto = new AccountDto();
         dto.balance = account.getBalance();
-        dto.accountId = account.getAccountId();
+        dto.id = account.getAccountId();
         return dto;
     }
     dtoToDomain(dto: AccountDto): Account {
-        return new Account(dto.accountId, dto.balance, dto.id);
+        return new Account(dto.id, dto.balance);
     }
 
 }

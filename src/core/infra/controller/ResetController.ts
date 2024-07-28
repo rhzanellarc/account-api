@@ -14,10 +14,10 @@ export class ResetController {
     readonly useCase: Reset
   ) {}
 
-  @Get('')
+  @Post('')
   @ApiOperation({ summary: 'Create a new entity' })
   async event(@Res() response: Response): Promise<any> {
     this.useCase.execute()
-    return response.status(200).send();
+    return response.status(200).send('OK');
   }
 }

@@ -27,7 +27,7 @@ export class EventController {
       return response.status(201).json(res);
     } catch (error) {
       if (error instanceof AccountNotFoundError) {
-        return response.status(404).send();
+        return response.status(404).json(0);
       } else if (error instanceof InvalidParametersError) {
         return response.status(400).send(error.message);
       } else if (error instanceof InsufficientBalanceError) {
